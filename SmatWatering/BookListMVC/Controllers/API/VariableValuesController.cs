@@ -24,11 +24,12 @@ namespace SmartWatering.Controllers.API
         [HttpGet("all")]
         public ActionResult GetAllSensorValue()
         {
-            var val1 = _context.VariableValue.Where(x => x.VariableId == 1002).OrderByDescending(x => x.VariableValueId).Take(1).Select(x => new { Value = Math.Round(x.Value, 2) });
+            var val1 = _context.VariableValue.Where(x => x.VariableId == 4).OrderByDescending(x => x.VariableValueId).Take(1).Select(x => new { Value = Math.Round(x.Value, 2) });
             var val2 = _context.VariableValue.Where(x => x.VariableId == 2).OrderByDescending(x => x.VariableValueId).Take(1).Select(x => new { Value = Math.Round(x.Value, 2) });
-            var val3= _context.VariableValue.Where(x => x.VariableId == 3).OrderByDescending(x => x.VariableValueId).Take(1).Select(x => new { Value = Math.Round(x.Value, 2) });
-            var val4= _context.VariableValue.Where(x => x.VariableId == 1).OrderByDescending(x => x.VariableValueId).Take(1).Select(x => new { Value = Math.Round(x.Value , 2) });
-            var val = new { id1 = val1, id2 = val2, id3 = val3, id4=val4 };
+            var val3 = _context.VariableValue.Where(x => x.VariableId == 3).OrderByDescending(x => x.VariableValueId).Take(1).Select(x => new { Value = Math.Round(x.Value, 2) });
+            var val4 = _context.VariableValue.Where(x => x.VariableId == 1).OrderByDescending(x => x.VariableValueId).Take(1).Select(x => new { Value = Math.Round(x.Value, 2) });
+            var val = new { id1 = val1, id2 = val2, id3 = val3, id4 = val4 };
+            //var val = new { id1 = val1 ,id2 = val2 };
             return new JsonResult(val);
         }
         //GET: api/SensorValues

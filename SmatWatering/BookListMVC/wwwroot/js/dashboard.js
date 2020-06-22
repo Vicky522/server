@@ -15,7 +15,7 @@ function realTime() {
         
         $.ajax({
             type: "GET",
-            url: "http://localhost:5005/api/VariableValues/1002",
+            url: "http://localhost:5005/api/VariableValues/4",
             success: function (data) {
                 var tem = data[0].value;
                 document.getElementById("level-water").innerHTML = tem + " %";
